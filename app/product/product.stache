@@ -1,0 +1,5 @@
+<div style="border:solid 3px black">
+  {{name}}<br/>
+  {{price}}<br/>
+  {{image}}
+</div>
