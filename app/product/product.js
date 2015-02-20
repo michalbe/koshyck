@@ -2,6 +2,7 @@ steal(
 'can',
 './product.mustache!',
 function(can, prTemplate) {
+  
   var Products = can.Model.extend({
     parseModels: function(response) {
       response = response.map(function(element) {
