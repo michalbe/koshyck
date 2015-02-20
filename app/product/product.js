@@ -1,18 +1,18 @@
 steal(
-  'can',
-  './products.mustache!',
-  function(can, template) {
-    var Products = can.Model.extend({
-      findAll: "GET /products"
-      findOne: "GET /products/{id}"
-    }, {});
+'can',
+'./product.mustache!',
+function(can, template) {
+  var Products = can.Model.extend({
+    findAll: "POST /products"
+  }, {});
 
-    can.Component.extend({
-      tag: 'products',
-      template: template,
-      scope: new Products.List({})
-    });
+  can.Component.extend({
+    tag: 'products',
+    template: template,
+    scope: {
+      products: new Products.List({})
+    }
+  });
 
-    return Products;
-  }
-);
+  return Products;
+});

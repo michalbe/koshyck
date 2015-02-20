@@ -19,14 +19,12 @@ steal.config({
     "mustache": "can/view/mustache/system"
   },
 
-  fixtures: false
+  fixtures: true
 });
 
 if(steal.config('fixtures')) {
-  steal.dev.log("FIXTURES USED");
-
   System.meta['app/app'] = {
-    deps: ['app/fixtures']
+    deps: ['app/fixtures/fixtures']
   };
 }
 
