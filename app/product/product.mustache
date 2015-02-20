@@ -1,17 +1,23 @@
-<button can-click="{sortAlphabetically}">sort alphabetically</button>
-<br/>
-<button can-click="{showAll}">all accesories</button>
-<button can-click="{showMen}">men accesories</button>
-<button can-click="{showWomen}">women accesories</button>
-<button can-click="{showChildren}">children accesories</button>
-<button can-click="{showSports}">sports accesories</button>
-
-{{#each products}}
-  {{#if visible}}
-    <div style="border:solid 3px black">
-      {{name}}<br/>
-      {{price}}<br/>
-      {{image}}
+<div class="container">
+  <div class="col-xs-12">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default" can-click="{sortAlphabetically}">sort alphabetically</button>
     </div>
-  {{/if}}
-{{/each}}
+    <div class="btn-group" role="group">
+      <button  type="button" class="btn btn-default" can-click="{showAll}">all accesories</button>
+      <button  type="button" class="btn btn-default" can-click="{showMen}">men accesories</button>
+      <button  type="button" class="btn btn-default" can-click="{showWomen}">women accesories</button>
+      <button  type="button" class="btn btn-default" can-click="{showChildren}">children accesories</button>
+      <button  type="button" class="btn btn-default" can-click="{showSports}">sports accesories</button>
+    </div>
+  </div>
+  {{#each products}}
+    {{#if visible}}
+      <div class="col-xs-3">
+        {{name}}<br/>
+        {{price}}<br/>
+        <div class="product-image" style="background-image: url(img/{{image}})">
+      </div>
+    {{/if}}
+  {{/each}}
+</div>

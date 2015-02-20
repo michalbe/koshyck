@@ -2,7 +2,7 @@ steal(
 'can',
 './product.mustache!',
 function(can, prTemplate) {
-  
+
   var Products = can.Model.extend({
     parseModels: function(response) {
       response = response.map(function(element) {
@@ -50,11 +50,6 @@ function(can, prTemplate) {
       },
       showSports: function() {
         this.filter('category', 'Sports Accessories');
-      }
-    },
-    events: {
-      'inserted' : function(){
-        console.log('inserted');
       }
     }
   });

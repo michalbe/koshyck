@@ -1,0 +1,19 @@
+product-list .product-image {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+product-list .product-item {
+  width: 0px;
+  height: 0px;
+  transition: width 1s, height 1s;
+  overflow: hidden;
+  display: inline-block;
+}
+
+product-list .product-item.visible{
+  width: auto;
+  height: auto;
+}
