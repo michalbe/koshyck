@@ -10,7 +10,11 @@ function(can, template) {
     tag: 'products',
     template: template,
     scope: {
-      products: new Products.List({})
+      products: new Products.List({}),
+      sort: function() {
+        console.log('wqwe', this.products);
+        this.products.sort('name', true);
+      }
     }
   });
 
