@@ -32,7 +32,8 @@ function(can, template) {
         });
       },
 
-      manAcc: function() {
+      showMenAccesories: function() {
+        console.log(arguments);
         this.filter('category', 'Men Accessories');
       }
     }
