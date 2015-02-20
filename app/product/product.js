@@ -1,7 +1,7 @@
 steal(
 'can',
 './product.mustache!',
-function(can, template) {
+function(can, prTemplate) {
   var Products = can.Model.extend({
     parseModels: function(response) {
       response = response.map(function(element) {
@@ -13,11 +13,12 @@ function(can, template) {
     findAll: "POST /products"
   }, {});
 
-  can.Component.extend({
-    tag: 'products',
-    template: template,
+  return can.Component.extend({
+    tag: 'product-list',
+    template: prTemplate,
     scope: {
       products: new Products.List({}),
+
       sortAlphabetically: function() {
         this.products.sort('name', true);
       },
@@ -49,8 +50,11 @@ function(can, template) {
       showSports: function() {
         this.filter('category', 'Sports Accessories');
       }
+    },
+    events: {
+      'inserted' : function(){
+        console.log('inserted');
+      }
     }
   });
-
-  return Products;
 });

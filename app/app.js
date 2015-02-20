@@ -1,7 +1,7 @@
 steal(
 'can',
-'./product/product.js',
-function(can) {
+'app/homepage/homepage.js',
+function(can, appTemplate) {
 
   $.extend(can.List.prototype, {
     sort: function (comparator, reverse) {
@@ -18,8 +18,8 @@ function(can) {
     }
   });
 
-  can.$(window).ready(function(){
-    var view = can.view.mustache('<products></products>')({});
+  can.$(window).ready(function() {
+    var view = can.view.mustache('<homepage></homepage>')({});
     $('#app').html(view);
   });
 });
