@@ -1,8 +1,11 @@
 <button can-click="{sort}">sort</button>
+<button can-click="{manAcc}">man accesories</button>
 {{#each products}}
-  <div style="border:solid 3px black">
-    {{name}}<br/>
-    {{price}}<br/>
-    {{image}}
-  </div>
+  {{#if visible}}
+    <div style="border:solid 3px black">
+      {{name}}<br/>
+      {{price}}<br/>
+      {{image}}
+    </div>
+  {{/if}}
 {{/each}}

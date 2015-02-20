@@ -15,8 +15,6 @@ function(can) {
       if (reverse) {
         this.reverse();
       }
-
-      can.trigger(this, "reset");
     }
   });
 
