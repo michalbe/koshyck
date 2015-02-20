@@ -3,6 +3,13 @@ steal(
 './product.mustache!',
 function(can, template) {
   var Products = can.Model.extend({
+    parseModels: function(response) {
+      response = response.map(function(element) {
+        element.visible = true;
+        return element;
+      });
+      return response;
+    },
     findAll: "POST /products"
   }, {});
 
@@ -12,13 +19,11 @@ function(can, template) {
     scope: {
       products: new Products.List({}),
       sort: function() {
-        console.log('wqwe', this.products);
         this.products.sort('name', true);
       },
 
       filter: function(key, val) {
         $.each(this.products, function(i, product) {
-          console.log(product);
           if (product[key] === val) {
             product.attr('visible', true);
           } else {
@@ -27,8 +32,7 @@ function(can, template) {
         });
       },
 
-      manAcc: function(){
-        console.log('eeelo');
+      manAcc: function() {
         this.filter('category', 'Men Accessories');
       }
     }
